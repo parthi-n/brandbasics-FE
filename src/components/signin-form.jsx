@@ -47,10 +47,11 @@ export function SigninForm({ className, ...props }) {
 
 	useEffect(() => {
 		console.log("Login Success:", loginSuccess);
-		if (loginSuccess) {
+		// Set a delay (e.g., 2 seconds) before redirecting
+		setTimeout(() => {
 			router.push("/dashboard");
 			console.log("After redirect");
-		}
+		}, 2000); // 2000ms = 2 seconds
 	}, [loginSuccess]);
 
 	return (
