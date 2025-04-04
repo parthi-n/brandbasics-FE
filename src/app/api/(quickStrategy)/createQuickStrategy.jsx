@@ -5,11 +5,14 @@ const BASE_URL = process.env.NEXT_PUBLIC_BRANDBASICS_BACKEND_URL || process.env.
 const PROJECTS_URL = `${BASE_URL}/strategy`;
 
 export async function createQuickStrategy(brandDetails) {
+	const token = await getToken();
+
 	try {
 		const res = await fetch(`${PROJECTS_URL}/create-quick-strategy`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
+				Cookie: token,
 			},
 			credentials: "include",
 			body: JSON.stringify(brandDetails),
