@@ -19,6 +19,7 @@ export function SigninForm({ className, ...props }) {
 		email: "",
 		password: "",
 	});
+	const [loginSuccess, setLoginSuccess] = useState(false);
 
 	const { email, password } = signinData;
 	const handleChange = (evt) => {
@@ -30,9 +31,10 @@ export function SigninForm({ className, ...props }) {
 		evt.preventDefault();
 		try {
 			const signedInUser = await signIn(signinData);
-			console.log("signedInUser:", signedInUser); 
+			console.log("signedInUser:", signedInUser);
 			await setUser(signedInUser.user);
-			console.log("User@Signin:", user); 
+			console.log("User@Signin:", user);
+			setLoginSuccess(true);
 		} catch (error) {
 			setMessage(error.message);
 		}
@@ -44,11 +46,10 @@ export function SigninForm({ className, ...props }) {
 	};
 
 	useEffect(() => {
-		console.log("User@useEffect:", user);
-		if (user) {
-			router.push("/dashboard");
+		if (loginSuccess) {
+			router.push("/dashboard"); // Trigger redirect on successful login
 		}
-	}, [user, router]);
+	}, [loginSuccess, router]);
 
 	return (
 		<form className={cn("flex flex-col gap-6", className)} {...props} onSubmit={handleSubmit}>
