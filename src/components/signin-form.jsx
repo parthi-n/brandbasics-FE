@@ -46,8 +46,8 @@ export function SigninForm({ className, ...props }) {
 	};
 
 	useEffect(() => {
-		console.log("Login Success:", loginSuccess);
 		if (loginSuccess && router) {
+			console.log("Login Success:", loginSuccess);
 			router.push("/dashboard"); // Trigger redirect on successful login
 		}
 	}, [loginSuccess, router]);
