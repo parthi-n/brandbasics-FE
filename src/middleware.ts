@@ -8,7 +8,7 @@ export async function middleware(req: NextRequest) {
 
 	if (!cookie || !cookie.value) {
 		console.log("no cookie");
-		return NextResponse.redirect(new URL("/", req.url));
+		return NextResponse.redirect(new URL("/hello", req.url));
 	}
 
 	try {
