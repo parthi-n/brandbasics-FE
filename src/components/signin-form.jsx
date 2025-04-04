@@ -30,10 +30,7 @@ export function SigninForm({ className, ...props }) {
 		evt.preventDefault();
 		try {
 			const signedInUser = await signIn(signinData);
-			console.log("signedInUser:", signedInUser);
 			await setUser(signedInUser.user);
-			console.log("user", user);
-			router.push("/dashboard");
 		} catch (error) {
 			setMessage(error.message);
 		}
@@ -43,6 +40,14 @@ export function SigninForm({ className, ...props }) {
 		// Check if username, password, and password confirmation are all valid
 		return !(email && password);
 	};
+
+
+	useEffect(() => {
+		if (user) {
+		  router.push("/dashboard");
+		}
+	  }, [user, router]);
+	
 
 	return (
 		<form className={cn("flex flex-col gap-6", className)} {...props} onSubmit={handleSubmit}>
