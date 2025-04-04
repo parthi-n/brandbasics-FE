@@ -31,9 +31,9 @@ export function SigninForm({ className, ...props }) {
 		evt.preventDefault();
 		try {
 			const signedInUser = await signIn(signinData);
-			console.log("signedInUser:", signedInUser);
+			console.log("token", signedInUser.token);
+			await localStorage.setItem("token", signedInUser.token);
 			await setUser(signedInUser.user);
-			console.log("User@Signin:", user);
 			setLoginSuccess(true);
 		} catch (error) {
 			setMessage(error.message);
