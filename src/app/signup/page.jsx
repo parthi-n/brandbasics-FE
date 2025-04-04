@@ -1,7 +1,7 @@
 "use client";
 
 import { GalleryVerticalEnd } from "lucide-react";
-import { SignupForm } from "../../components/signup-form.jsx";
+import { SignupForm } from "../../components/signup-form-alt.jsx";
 import Image from "next/image";
 import { AppContextWrapper } from "../../context";
 

@@ -1,5 +1,5 @@
 import { GalleryVerticalEnd } from "lucide-react";
-import { SigninForm } from "../components/signin-form";
+import { SigninForm } from "../components/signin-form-alt";
 import { AppContextWrapper } from "../context";
 import Image from "next/image";
 
