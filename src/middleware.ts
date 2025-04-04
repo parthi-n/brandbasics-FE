@@ -4,18 +4,21 @@ import { verifyToken } from "./app/api/(auth)/verifyToken";
 
 export async function middleware(req: NextRequest) {
 	const cookie = req.cookies.get("token");
+	console.log('Token cookie:', cookie);
 
 	if (!cookie || !cookie.value) {
-		return console.log("no cookie"), NextResponse.redirect(new URL("/", req.url));
+		console.log("no cookie");
+		return NextResponse.redirect(new URL("/", req.url));
 	}
 
 	try {
 		const isValid = await verifyToken();
-		if (cookie && isValid) {
-			return NextResponse.next();
-		} else {
-			return NextResponse.redirect(new URL("/", req.url));
-		}
+		console.log("isValid", isValid);
+		// if (cookie && isValid) {
+		// 	return NextResponse.next();
+		// } else {
+		// 	return NextResponse.redirect(new URL("/", req.url));
+		// }
 	} catch (error) {
 		console.log("Invalid or expired token", error);
 		return NextResponse.redirect(new URL("/", req.url));
