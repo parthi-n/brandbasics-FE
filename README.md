@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🧠 BrandBasics — AI-Powered Brand Strategy Generator
 
-## Getting Started
+[LIVE DEMO](https://brandbasics-fe.vercel.app/)
 
-First, run the development server:
+## 🧩 Problem Statement
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Branding is critical for business success, yet many startups and entrepreneurs struggle to articulate their brand identity, mission, or message. Traditional branding processes can be expensive, time-consuming, and hard to access for small teams.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 💡 Idea & Goal
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**BrandBasics** is an AI-powered platform that helps users generate professional brand strategies in minutes.  
+By entering key details about their business, users receive AI-generated outputs like:
 
-## Learn More
+- Brand Positioning
+- Mission & Vision
+- Messaging Statements
+- Brand Promise
+- Tone of Voice
+- Brand Archetype
+- Story, Beliefs, Personality & More
 
-To learn more about Next.js, take a look at the following resources:
+The goal is to **democratize strategic branding** through automation and AI, making it faster, smarter, and more affordable for everyone.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Login Page](public/login.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![Project Page](public/project.png)
 
-## Deploy on Vercel
+![Strategy Form Page](public/strategy-form.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Strategy Page](public/strategy.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🛠 Tech Stack
+
+| Layer         | Tools / Services                              |
+| ------------- | --------------------------------------------- |
+| **Frontend**  | Next.js, Tailwind CSS                         |
+| **Backend**   | Node.js, Express                              |
+| **Database**  | POSTGRES SQL                                  |
+| **AI Engine** | Chat GPT, Watson NLU (optional hybrid)        |
+| **Auth**      | Cookie-based                                  |
+| **Hosting**   | Vercel (frontend), Render (backend), NEON(DB) |
+
+---
+
+## 🔄 User Flow
+
+1. **User Onboarding:**
+
+   - User signs in / registers
+   - Create projects
+   - Enters brand-related inputs (Name, Industry, Values, Target Audience, etc.)
+
+2. **AI Processing:**
+
+   - Backend formats the data into prompts
+   - Sends to ChatGPT
+   - Applies Branding Rules based on user input (e.g., archetype → tone)
+
+3. **AI Output:**
+
+   - JSON response containing structured brand strategy
+   - Rendered into editable blocks on the frontend
+
+4. **User Feedback (Future Plan):**
+   - User can rate AI responses for future training
+   - Refine branding framework
+   - Save/export/share brand documentation
+
+---
+
+## 📒 Data Structure
+
+![user-data](public/user-data.png)
+![strategy-data](public/strategy-data.png)
+
+---
+
+## 🔧 Additional Features (Later):
+
+- 🧠 AI Fine-tuning with brand datasets for more precise results
+- 📊 Strategy Visualizations (Brand Wheel, Archetype Maps, etc.)
+- 📁 Export options: PDF, Figma-friendly, Notion-style docs
+- 👥 Collaboration tools (team feedback & editing)
+- 🎯 Custom Brand Rule Profiles per user/project
+- 🌍 Multilingual brand messaging generation
+- 🧬 Integration with OpenAI for hybrid logic and creativity boost
+
+---
+
+## 📌 Status
+
+> 🛠 Currently in development. MVP version in progress with backend–frontend integration using ChatGPT.
+
+---
+
+## 👨‍💻 Author
+
+[Parthiban](https://github.com/parthi-n)
