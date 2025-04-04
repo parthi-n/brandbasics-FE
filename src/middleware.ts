@@ -3,10 +3,10 @@ import type { NextRequest } from "next/server";
 import { verifyToken } from "./app/api/(auth)/verifyToken";
 
 export async function middleware(req: NextRequest) {
-	const cookie = req.cookies.get("token") || localStorage.getItem("token");
+	const cookie = req.cookies.get("token");
 	console.log("Token cookie:", cookie);
 
-	if (!cookie) {
+	if (!cookie || !cookie.value) {
 		console.log("no cookie");
 		return NextResponse.redirect(new URL("/", req.url));
 	}
