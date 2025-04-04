@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "../lib/utils";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -41,13 +41,11 @@ export function SigninForm({ className, ...props }) {
 		return !(email && password);
 	};
 
-
 	useEffect(() => {
 		if (user) {
-		  router.push("/dashboard");
+			router.push("/dashboard");
 		}
-	  }, [user, router]);
-	
+	}, [user, router]);
 
 	return (
 		<form className={cn("flex flex-col gap-6", className)} {...props} onSubmit={handleSubmit}>

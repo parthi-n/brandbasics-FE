@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { cn } from "../lib/utils";
 import { Button } from "./ui/button";
@@ -34,18 +34,21 @@ export function SignupForm({ className, ...props }) {
 
 		try {
 			const newUser = await signUp(signupData);
-			setUser(newUser);
-			router.push("/dashboard");
-			console.log(newUser);
+			await setUser(newUser);
 		} catch (error) {
 			setMessage(error.message);
 		}
 	};
 
 	const isFormInvalid = () => {
-		// Check if username, password, and password confirmation are all valid
 		return !(username && password && email);
 	};
+
+	useEffect(() => {
+		if (user) {
+			router.push("/dashboard");
+		}
+	}, [user, router]);
 
 	return (
 		<form className={cn("flex flex-col gap-6", className)} {...props} onSubmit={handleSubmit}>
