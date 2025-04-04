@@ -2,12 +2,10 @@ import Link from "next/link";
 import ProjectContext from "../../../../components/projectContext";
 import { listQuickStrategies } from "../../../api/(quickStrategy)/listQuickStrategies";
 import { fetchProject } from "../../../api/(project)/fetchProject";
-import { CreateQuickStrategy } from "../../../../components/create-quick-strategy";
+import { CreateQuickStrategy } from "../../../../components/create-quick-strategy-alt";
 
 export default async function Page({ params }) {
 	const projectId = (await params).projectId;
-	console.log("projectId QS", projectId);
-
 	const projectData = await fetchProject(projectId);
 	const quickStrategyData = await listQuickStrategies(projectId);
 
