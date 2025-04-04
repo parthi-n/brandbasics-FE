@@ -1,11 +1,14 @@
+"use client";
+
 import { GalleryVerticalEnd } from "lucide-react";
-import { SigninForm } from "../components/signin-form";
-import { AppContextWrapper } from "../context";
+import { SignupForm } from "../../components/signup-form.jsx";
 import Image from "next/image";
+import { AppContextWrapper } from "../../context";
 
-import bbSplash from "../images/bb-splash.jpg";
+import bbSplash from "../../images/bb-splash.jpg";
+console.log(bbSplash);
 
-export default function Home() {
+export default function SignupPage() {
 	return (
 		<AppContextWrapper>
 			<div className="grid min-h-svh lg:grid-cols-2">
@@ -15,12 +18,12 @@ export default function Home() {
 							<div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
 								<GalleryVerticalEnd className="size-4" />
 							</div>
-							Acme Inc.
+							BrandBasics.io
 						</a>
 					</div>
 					<div className="flex flex-1 items-center justify-center">
 						<div className="w-full max-w-xs">
-							<SigninForm />
+							<SignupForm />
 						</div>
 					</div>
 				</div>
