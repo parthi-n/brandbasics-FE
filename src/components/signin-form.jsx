@@ -39,7 +39,6 @@ export function SigninForm({ className, ...props }) {
 	};
 
 	const isFormInvalid = () => {
-		// Check if username, password, and password confirmation are all valid
 		return !(email && password);
 	};
 

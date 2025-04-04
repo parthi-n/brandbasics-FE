@@ -1,5 +1,4 @@
 import { handleResponse } from "../../../lib/handleResponse";
-import { getToken } from "../../../lib/getCookie";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BRANDBASICS_BACKEND_URL || process.env.NEXT_PUBLIC_BRANDBASICS_BACKEND_LOCAL_URL;
 const PROJECTS_URL = `${BASE_URL}/strategy`;
