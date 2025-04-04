@@ -47,7 +47,7 @@ export function SigninForm({ className, ...props }) {
 
 	useEffect(() => {
 		if (loginSuccess) {
-			router.push("/dashboard"); // Trigger redirect on successful login
+			router.push("https://brandbasics-fe.vercel.app/dashboard"); // Trigger redirect on successful login
 		}
 	}, [loginSuccess, router]);
 
