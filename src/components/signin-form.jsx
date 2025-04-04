@@ -30,6 +30,7 @@ export function SigninForm({ className, ...props }) {
 		evt.preventDefault();
 		try {
 			const signedInUser = await signIn(signinData);
+			console.log("signedInUser:", signedInUser);
 			await setUser(signedInUser.user);
 			console.log("user", user);
 			router.push("/dashboard");
