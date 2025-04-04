@@ -8,7 +8,7 @@ export async function middleware(req: NextRequest) {
 
 	if (!cookie || !cookie.value) {
 		console.log("no cookie");
-		return NextResponse.redirect(new URL("/test", req.url));
+		return NextResponse.redirect(new URL("/", req.url));
 	}
 
 	try {
@@ -26,5 +26,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-	matcher: ["/dashboard/:path*"],
+	matcher: ["/dashboard/:path*"], 
 };

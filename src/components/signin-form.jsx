@@ -51,7 +51,7 @@ export function SigninForm({ className, ...props }) {
 			setTimeout(() => {
 				router.push("/dashboard");
 				console.log("After redirect");
-			}, 2000); // 2000ms = 2 seconds
+			}, 10000); // 2000ms = 2 seconds
 		}
 	}, [loginSuccess]);
 
