@@ -49,7 +49,7 @@ export function SigninForm({ className, ...props }) {
 		console.log("Login Success:", loginSuccess);
 		if (loginSuccess) {
 			setTimeout(() => {
-				router.push("/dashboard");
+				// router.push("/dashboard");
 				console.log("After redirect");
 			}, 10000); // 2000ms = 2 seconds
 		}
