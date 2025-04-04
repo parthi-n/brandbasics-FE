@@ -46,11 +46,12 @@ export function SigninForm({ className, ...props }) {
 	};
 
 	useEffect(() => {
+		console.log("Login Success:", loginSuccess);
+		console.log("User@redirect:", user);
 		if (loginSuccess && router) {
-			console.log("Login Success:", loginSuccess);
-			router.push("/dashboard"); // Trigger redirect on successful login
+			window.location.href = "/dashboard";
 		}
-	}, [loginSuccess, router]);
+	}, [loginSuccess]);
 
 	return (
 		<form className={cn("flex flex-col gap-6", className)} {...props} onSubmit={handleSubmit}>
