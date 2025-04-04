@@ -48,7 +48,10 @@ export function SigninForm({ className, ...props }) {
 	useEffect(() => {
 		console.log("Login Success:", loginSuccess);
 		if (loginSuccess) {
-			window.location.href = "https://brandbasics-fe.vercel.app/dashboard";
+			console.log("Before redirect");
+			router.refresh(); // dirty fix, but it works
+			router.push("/dashboard");
+			console.log("After redirect");
 		}
 	}, [loginSuccess]);
 
