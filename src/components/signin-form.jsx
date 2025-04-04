@@ -48,11 +48,9 @@ export function SigninForm({ className, ...props }) {
 	useEffect(() => {
 		console.log("Login Success:", loginSuccess);
 		if (loginSuccess) {
-		  setTimeout(() => {
-			router.push("https://brandbasics-fe.vercel.app/dashboard");
-		  }, 500); // Add a slight delay to see if the redirect happens
+			window.location.href = "https://brandbasics-fe.vercel.app/dashboard";
 		}
-	  }, [loginSuccess, router]);
+	}, [loginSuccess]);
 
 	return (
 		<form className={cn("flex flex-col gap-6", className)} {...props} onSubmit={handleSubmit}>
