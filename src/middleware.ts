@@ -6,7 +6,7 @@ export async function middleware(req: NextRequest) {
 	const cookie = req.cookies.get("token") || localStorage.getItem("token");
 	console.log("Token cookie:", cookie);
 
-	if (!cookie || !cookie.value) {
+	if (!cookie) {
 		console.log("no cookie");
 		return NextResponse.redirect(new URL("/", req.url));
 	}
