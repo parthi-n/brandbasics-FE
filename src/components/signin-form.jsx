@@ -31,7 +31,7 @@ export function SigninForm({ className, ...props }) {
 		try {
 			const signedInUser = await signIn(signinData);
 			await setUser(signedInUser.user);
-			console.log(user);
+			console.log("user", user);
 			router.push("/dashboard");
 		} catch (error) {
 			setMessage(error.message);
