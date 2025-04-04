@@ -3,8 +3,8 @@ import type { NextRequest } from "next/server";
 import { verifyToken } from "./app/api/(auth)/verifyToken";
 
 export async function middleware(req: NextRequest) {
-	const cookie = req.cookies.get("token");
-	console.log('Token cookie:', cookie);
+	const cookie = req.cookies.get("token") || localStorage.getItem("token");
+	console.log("Token cookie:", cookie);
 
 	if (!cookie || !cookie.value) {
 		console.log("no cookie");
@@ -26,5 +26,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-	matcher: ["/dashboard/:path*"], 
+	matcher: ["/dashboard/:path*"],
 };
