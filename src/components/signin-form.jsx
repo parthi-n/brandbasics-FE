@@ -48,8 +48,6 @@ export function SigninForm({ className, ...props }) {
 	useEffect(() => {
 		console.log("Login Success:", loginSuccess);
 		if (loginSuccess) {
-			console.log("Before redirect");
-			router.refresh(); // dirty fix, but it works
 			router.push("/dashboard");
 			console.log("After redirect");
 		}
