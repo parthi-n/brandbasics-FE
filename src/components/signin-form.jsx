@@ -30,7 +30,9 @@ export function SigninForm({ className, ...props }) {
 		evt.preventDefault();
 		try {
 			const signedInUser = await signIn(signinData);
+			console.log("signedInUser:", signedInUser); 
 			await setUser(signedInUser.user);
+			console.log("User@Signin:", user); 
 		} catch (error) {
 			setMessage(error.message);
 		}
@@ -42,6 +44,7 @@ export function SigninForm({ className, ...props }) {
 	};
 
 	useEffect(() => {
+		console.log("User@useEffect:", user);
 		if (user) {
 			router.push("/dashboard");
 		}
